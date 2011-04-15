@@ -1,0 +1,25 @@
+For a bit of background, see:
+
+  http://my.opera.com/cstrep/blog/2011/04/10/how-to-tag-a-remote-git-repository-or-vcs-support-for-fabric
+
+Basic version control abstraction for Fabric.
+If you don't know what Fabric is, go to http://www.fabfile.org
+
+Example of things you can do:
+
+    vcs.list_tags(
+        repository_type = 'git',
+        repository_url = 'http://svn.server/project',
+    )
+
+or:
+
+    vcs.tag(
+        # Note: no 'trunk' or branches in the URL
+        repository_url = 'http://some.svn.server/svn/project',
+        repository_type = 'svn'
+        message = 'Some comment',
+        tag = 'tag-name',
+    )
+
+
