@@ -196,7 +196,7 @@ def tag(repository_url, tag, branch='', source_tag='', message='', repository_ty
         tag_meta['temp_dir'] = "/var/tmp/deployment/repos/temp.$$"
         tag_cmd = \
               'rm -rf %(temp_dir)s && ' \
-            + 'git clone --depth=1 %(src)s %(temp_dir)s && ' \
+            + 'git clone --bare --depth=1 %(src)s %(temp_dir)s && ' \
             + 'cd %(temp_dir)s && ' \
             + "git checkout %(branch)s && " \
             + "git tag -a '%(tag)s' -m '%(message)s' && " \
